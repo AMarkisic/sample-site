@@ -1,0 +1,21 @@
+{
+  "name": "sample-site",
+  "version": "1.0.0",
+  "description": "Sample Site",
+  "main": "index.js",
+  "scripts": {
+    "build": "hugo --minify",
+    "create": "hugo new",
+    "serve": "hugo server -ws",
+    "hugo": "hugo"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://qualitybytes@dev.azure.com/qualitybytes/Quality%20Bytes%20Playground/_git/SampleHugoSite"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "hugo-bin": "^0.45.2"
+  }
+}
