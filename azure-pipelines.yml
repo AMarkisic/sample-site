@@ -1,0 +1,30 @@
+# Build the homepage
+trigger:
+- master
+ 
+pool:
+  vmImage: 'windows-latest'
+
+steps:
+- task: NodeTool@0
+  displayName: "Updating node to version 10.x"
+  inputs:
+    versionSpec: "10.x"
+
+- task: Npm@1
+  displayName: 'npm install'
+  inputs:
+    command: install
+
+- task: Npm@1
+  displayName: 'npm build'
+  inputs:
+    command: custom
+    customCommand: 'run-script build'
+
+- task: ArchiveFiles@2
+  inputs:
+    rootFolderOrFile: '$(System.DefaultWorkingDirectory)/public'
+    includeRootFolder: false
+
+- task: PublishBuildArtifacts@1
